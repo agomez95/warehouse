@@ -8,13 +8,13 @@ export class CategoryService {
     constructor(private prisma: PrismaService) {}
 
     async new(dto: CategoryDto) {
-        const data = {
-            name: dto.name,
-            description: dto.description,
-        }
-
         try {
-            const category = await this.prisma.category.create({data});
+            const category = await this.prisma.category.create({ 
+                data: {
+                    name: dto.name.toString(),
+                    description: dto.description.toString(),
+                }  
+            });
             return `New category created: ${category.name}`;
         } catch(e) {
             if(e instanceof Prisma.PrismaClientKnownRequestError) {
@@ -28,6 +28,6 @@ export class CategoryService {
     }
 
     async all(){
-        
+        return await this.prisma.category.findMany({where:{state:true}})
     }
 }

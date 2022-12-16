@@ -6,13 +6,13 @@ import { CategoryDto } from "./dto";
 export class CategoryController {
     constructor(private categoryService: CategoryService){}
 
-    @Get('new')
+    @Get('all')
+    all(){
+        return this.categoryService.all();
+    }
+
+    @Post('new')
     new(@Body() dto: CategoryDto){
         return this.categoryService.new(dto);
     }
-
-    /*@Post('all')
-    all(){
-
-    }*/
 }
