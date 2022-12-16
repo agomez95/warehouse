@@ -30,7 +30,7 @@ model Product {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  name String
+  name String @unique
   stock Int @default(0)
   cost Float
   code Int @unique  

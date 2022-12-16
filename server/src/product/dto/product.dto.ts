@@ -13,9 +13,9 @@ export class ProductDto {
     @IsNotEmpty()
     cost: number;
 
-    @IsString()
+    @IsNumber()
     @IsNotEmpty()
-    code: string;
+    code: number;
 
     @IsNumber()
     @IsNotEmpty()
