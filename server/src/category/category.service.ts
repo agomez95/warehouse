@@ -11,8 +11,8 @@ export class CategoryService {
         try {
             const category = await this.prisma.category.create({ 
                 data: {
-                    name: dto.name.toString(),
-                    description: dto.description.toString(),
+                    name: dto.name,
+                    description: dto.description,
                 }  
             });
             return `New category created: ${category.name}`;
@@ -28,6 +28,6 @@ export class CategoryService {
     }
 
     async all(){
-        return await this.prisma.category.findMany({where:{state:true}})
+        return await this.prisma.category.findMany({ where: { state: true } })
     }
 }

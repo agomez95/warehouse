@@ -7,12 +7,12 @@ export class CategoryController {
     constructor(private categoryService: CategoryService){}
 
     @Get('all')
-    all(){
+    all() {
         return this.categoryService.all();
     }
 
     @Post('new')
-    new(@Body() dto: CategoryDto){
+    new(@Body() dto: CategoryDto) {
         return this.categoryService.new(dto);
     }
 }
