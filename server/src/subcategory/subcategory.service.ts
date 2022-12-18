@@ -29,6 +29,6 @@ export class SubcategoryService {
     }
 
     async all() {
-        return await this.prisma.subcategory.findMany({ where: { state: true } });
+        return await this.prisma.subcategory.findMany();
     }
 }

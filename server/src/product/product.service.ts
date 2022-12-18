@@ -31,6 +31,6 @@ export class ProductService {
     }
 
     async all() {
-        return await this.prisma.product.findMany({ where: { state: true } });
+        return await this.prisma.product.findMany();
     }
 }

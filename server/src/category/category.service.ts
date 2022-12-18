@@ -28,6 +28,6 @@ export class CategoryService {
     }
 
     async all(){
-        return await this.prisma.category.findMany({ where: { state: true } })
+        return await this.prisma.category.findMany();
     }
 }
